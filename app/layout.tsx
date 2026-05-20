@@ -1,4 +1,25 @@
-import type { Metadata } from "next";
+export const metadata = {
+  title: "QizlyIQ - Train Your Brain",
+  description:
+    "Advanced IQ tests, brain games, memory challenges, and logic puzzles designed to improve focus and thinking skills.",
+  keywords: [
+    "IQ test",
+    "brain games",
+    "logic puzzles",
+    "memory training",
+    "focus training",
+    "QizlyIQ",
+  ],
+  openGraph: {
+    title: "QizlyIQ",
+    description: "Train your brain with advanced IQ tests and brain games.",
+    url: "https://qizlyiq.com",
+    siteName: "QizlyIQ",
+    type: "website",
+  },
+};
+
+/*import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -32,3 +53,4 @@ export default function RootLayout({
     </html>
   );
 }
+*/
