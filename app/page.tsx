@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0d1117] text-white flex flex-col items-center justify-center px-6">
+    <main className="min-h-screen bg-[#0d1117] text-white flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-4xl text-center">
         <h1 className="text-6xl font-black mb-6 tracking-tight whitespace-nowrap cursor-default overflow-visible leading-tight">
           {"QizlyIQ".split("").map((letter, index) => (
@@ -101,7 +101,8 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <footer className="absolute bottom-6 text-gray-500 text-sm flex gap-6">
+
+      <footer className="mt-16 mb-8 text-gray-500 text-sm flex gap-6">
         <a href="/about" className="hover:text-white transition">
           About
         </a>
