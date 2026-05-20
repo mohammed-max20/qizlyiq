@@ -11,7 +11,8 @@ export default function ResultPage() {
     setScore(savedScore);
   }, []);
 
-  const percentage = (score / 5) * 100;
+  const totalQuestions = 5;
+  const percentage = Math.round((score / totalQuestions) * 100);
 
   let rank = "Beginner";
 
@@ -28,7 +29,7 @@ export default function ResultPage() {
   }
 
   const shareResult = async () => {
-    const text = `I scored ${score}/5 on QizlyIQ. Can you beat me?`;
+    const text = `I scored ${score}/${totalQuestions} (${percentage}%) on QizlyIQ and got "${rank}". Can you beat me?`;
 
     if (navigator.share) {
       await navigator.share({
@@ -51,7 +52,7 @@ export default function ResultPage() {
           <h1 className="text-4xl font-black mb-2">{rank}</h1>
 
           <p className="text-gray-400 text-lg">
-            You answered {score} out of 5 questions correctly.
+            You answered {score} out of {totalQuestions} questions correctly.
           </p>
         </div>
 
