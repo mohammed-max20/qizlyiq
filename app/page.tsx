@@ -92,6 +92,13 @@ export default function Home() {
           >
             View More Tests
           </a>
+
+          <a
+            href="/daily-tip"
+            className="border border-gray-700 hover:border-green-500 transition px-8 py-4 rounded-2xl text-lg font-bold bg-[#161b22]"
+          >
+            Daily Brain Tip
+          </a>
         </div>
       </div>
       <footer className="absolute bottom-6 text-gray-500 text-sm flex gap-6">
