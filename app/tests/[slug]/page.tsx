@@ -1,4 +1,30 @@
 import { notFound } from "next/navigation";
+import TestRunner from "@/app/components/TestRunner";
+import { testsData, type TestData } from "@/app/data/testsData";
+
+export function generateStaticParams() {
+  return testsData.map((test: TestData) => ({
+    slug: test.slug,
+  }));
+}
+
+export default async function TestPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const test = testsData.find((item: TestData) => item.slug === slug);
+
+  if (!test) {
+    notFound();
+  }
+
+  return <TestRunner test={test} />;
+}
+
+/*import { notFound } from "next/navigation";
 
 const testsData: Record<
   string,
@@ -60,3 +86,4 @@ export default async function TestPage({
     </main>
   );
 }
+*/

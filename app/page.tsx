@@ -18,7 +18,7 @@ export default function Home() {
 
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <a
-            href="/coming-soon"
+            href="/tests/brain-rot-recovery"
             className="
       bg-[#161b22]
       border
@@ -38,7 +38,7 @@ export default function Home() {
           </a>
 
           <a
-            href="/coming-soon"
+            href="/tests/brain-games"
             className="
       bg-[#161b22]
       border
@@ -58,7 +58,7 @@ export default function Home() {
           </a>
 
           <a
-            href="/coming-soon"
+            href="/tests/personality-tests"
             className="
       bg-[#161b22]
       border
