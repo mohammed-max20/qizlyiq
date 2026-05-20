@@ -27,8 +27,7 @@ export const testsData: TestData[] = [
   {
     slug: "brain-rot-recovery",
     title: "Brain Rot Recovery Test",
-    description:
-      "Check how much short-form content, distractions, and low-focus habits are affecting your brain.",
+    description: "Measure your focus habits and digital distraction level.",
     questions: [
       {
         question:
@@ -40,8 +39,7 @@ export const testsData: TestData[] = [
         ],
       },
       {
-        question:
-          "Can you focus on one task for 30 minutes without checking your phone?",
+        question: "Can you focus for 30 minutes without checking your phone?",
         options: [
           { text: "Yes, easily", points: 2 },
           { text: "Sometimes", points: 1 },
@@ -49,8 +47,7 @@ export const testsData: TestData[] = [
         ],
       },
       {
-        question:
-          "How often do you feel mentally tired even without doing hard work?",
+        question: "How often do you feel mentally tired without deep work?",
         options: [
           { text: "Rarely", points: 2 },
           { text: "Sometimes", points: 1 },
@@ -58,7 +55,7 @@ export const testsData: TestData[] = [
         ],
       },
       {
-        question: "Do you read long text or articles without skipping quickly?",
+        question: "Do you read long text without skipping quickly?",
         options: [
           { text: "Yes", points: 2 },
           { text: "Sometimes", points: 1 },
@@ -66,43 +63,58 @@ export const testsData: TestData[] = [
         ],
       },
       {
-        question: "How quickly do you get bored when there is no stimulation?",
+        question: "How fast do you get bored without stimulation?",
         options: [
-          { text: "Not quickly", points: 2 },
+          { text: "Slowly", points: 2 },
           { text: "Medium", points: 1 },
-          { text: "Very quickly", points: 0 },
+          { text: "Very fast", points: 0 },
+        ],
+      },
+      {
+        question: "How often do notifications interrupt your work?",
+        options: [
+          { text: "Rarely", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "Constantly", points: 0 },
+        ],
+      },
+      {
+        question: "Can you enjoy quiet time without reaching for your phone?",
+        options: [
+          { text: "Yes", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "No", points: 0 },
         ],
       },
     ],
     results: [
       {
         min: 0,
-        max: 3,
+        max: 4,
         title: "High Brain Rot Risk",
         description:
-          "Your focus system is overloaded. Reduce short-form scrolling and rebuild deep attention slowly.",
+          "Your attention system is overloaded. Reduce short-form scrolling and rebuild deep focus.",
       },
       {
-        min: 4,
-        max: 7,
+        min: 5,
+        max: 10,
         title: "Moderate Brain Rot",
         description:
-          "You still have focus ability, but distractions are affecting your mental performance.",
+          "Your focus still works, but digital distractions are affecting your mental clarity.",
       },
       {
-        min: 8,
-        max: 10,
+        min: 11,
+        max: 14,
         title: "Healthy Focus",
         description:
-          "Your attention habits are strong. Keep protecting your focus and avoid overstimulation.",
+          "Your attention habits are strong. Keep protecting your focus from overstimulation.",
       },
     ],
   },
   {
     slug: "brain-games",
     title: "Brain Games Test",
-    description:
-      "Solve quick mental challenges that test logic, pattern recognition, and thinking speed.",
+    description: "Test logic, patterns, and quick thinking.",
     questions: [
       {
         question: "What comes next? 2, 4, 8, 16, ?",
@@ -122,7 +134,7 @@ export const testsData: TestData[] = [
       },
       {
         question:
-          "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops Lazzies?",
+          "All Bloops are Razzies. All Razzies are Lazzies. Are all Bloops Lazzies?",
         options: [
           { text: "Yes", points: 2 },
           { text: "No", points: 0 },
@@ -145,36 +157,51 @@ export const testsData: TestData[] = [
           { text: "V", points: 0 },
         ],
       },
+      {
+        question: "If today is Monday, what day is it after 10 days?",
+        options: [
+          { text: "Thursday", points: 2 },
+          { text: "Friday", points: 0 },
+          { text: "Wednesday", points: 0 },
+        ],
+      },
+      {
+        question: "Which number is different? 9, 16, 25, 36, 45",
+        options: [
+          { text: "16", points: 0 },
+          { text: "45", points: 2 },
+          { text: "36", points: 0 },
+        ],
+      },
     ],
     results: [
       {
         min: 0,
-        max: 3,
+        max: 4,
         title: "Needs Practice",
         description:
-          "Your brain games score is low. Practice logic puzzles and pattern questions daily.",
+          "Your score is low. Practice pattern recognition and logic puzzles daily.",
       },
       {
-        min: 4,
-        max: 7,
+        min: 5,
+        max: 10,
         title: "Good Thinker",
         description:
           "You solved several challenges correctly. Your reasoning is developing well.",
       },
       {
-        min: 8,
-        max: 10,
+        min: 11,
+        max: 14,
         title: "Sharp Brain",
         description:
-          "Strong logic and pattern recognition. You performed very well on this brain game.",
+          "Strong logic and pattern recognition. You performed very well.",
       },
     ],
   },
   {
     slug: "personality-tests",
     title: "Thinking Personality Test",
-    description:
-      "Discover your thinking style based on how you solve problems, make decisions, and handle focus.",
+    description: "Discover your cognitive thinking style.",
     questions: [
       {
         question: "When facing a problem, what do you usually do first?",
@@ -216,28 +243,129 @@ export const testsData: TestData[] = [
           { text: "Freeze or delay", points: 0 },
         ],
       },
+      {
+        question: "Which task feels easiest to you?",
+        options: [
+          { text: "Planning", points: 2 },
+          { text: "Improvising", points: 1 },
+          { text: "Repeating instructions", points: 0 },
+        ],
+      },
+      {
+        question: "How do you handle mistakes?",
+        options: [
+          { text: "Analyze and adjust", points: 2 },
+          { text: "Move on quickly", points: 1 },
+          { text: "Feel stuck", points: 0 },
+        ],
+      },
     ],
     results: [
       {
         min: 0,
-        max: 3,
+        max: 4,
         title: "Reactive Thinker",
         description:
-          "You tend to react more than plan. Building focus and structure will improve your decisions.",
+          "You tend to react more than plan. Structure and focus will improve your decisions.",
       },
       {
-        min: 4,
-        max: 7,
+        min: 5,
+        max: 10,
         title: "Balanced Thinker",
         description:
-          "You mix logic and instinct. With more consistency, your thinking can become sharper.",
+          "You mix logic and instinct. More consistency will sharpen your thinking.",
       },
       {
-        min: 8,
-        max: 10,
+        min: 11,
+        max: 14,
         title: "Strategic Thinker",
         description:
-          "You think with structure, logic, and control. This is a strong cognitive personality.",
+          "You think with structure, logic, and control. Strong cognitive personality.",
+      },
+    ],
+  },
+  {
+    slug: "memory-training",
+    title: "Memory Training Test",
+    description: "Check your memory habits and recall strength.",
+    questions: [
+      {
+        question: "How often do you forget why you entered a room?",
+        options: [
+          { text: "Rarely", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "Often", points: 0 },
+        ],
+      },
+      {
+        question: "Can you remember a short list after 5 minutes?",
+        options: [
+          { text: "Yes", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "No", points: 0 },
+        ],
+      },
+      {
+        question: "Do you repeat information to remember it?",
+        options: [
+          { text: "Often", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "Rarely", points: 0 },
+        ],
+      },
+      {
+        question: "How often do you forget names after meeting people?",
+        options: [
+          { text: "Rarely", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "Often", points: 0 },
+        ],
+      },
+      {
+        question: "Do you sleep enough before mentally hard days?",
+        options: [
+          { text: "Usually", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "Rarely", points: 0 },
+        ],
+      },
+      {
+        question: "Can you recall what you studied yesterday?",
+        options: [
+          { text: "Clearly", points: 2 },
+          { text: "Partly", points: 1 },
+          { text: "Barely", points: 0 },
+        ],
+      },
+      {
+        question: "Do distractions affect your memory?",
+        options: [
+          { text: "Rarely", points: 2 },
+          { text: "Sometimes", points: 1 },
+          { text: "A lot", points: 0 },
+        ],
+      },
+    ],
+    results: [
+      {
+        min: 0,
+        max: 4,
+        title: "Weak Recall",
+        description:
+          "Your memory habits need work. Start with sleep, repetition, and fewer distractions.",
+      },
+      {
+        min: 5,
+        max: 10,
+        title: "Average Memory",
+        description:
+          "Your memory is functional, but it can improve with better focus habits.",
+      },
+      {
+        min: 11,
+        max: 14,
+        title: "Strong Memory",
+        description: "You have solid recall habits and good memory discipline.",
       },
     ],
   },
