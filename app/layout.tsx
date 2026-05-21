@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Advanced IQ tests, brain games, memory challenges, and logic puzzles designed to improve focus and thinking skills.",
 
   icons: {
-    icon: "/icon.png",
+    icon: "/icon.ico",
   },
 
   keywords: [
