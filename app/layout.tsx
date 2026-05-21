@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "QizlyIQ - Train Your Brain",
   description:
     "Advanced IQ tests, brain games, memory challenges, and logic puzzles designed to improve focus and thinking skills.",
+
+  icons: {
+    icon: "/icon.png",
+  },
+
   keywords: [
     "IQ test",
     "brain games",
