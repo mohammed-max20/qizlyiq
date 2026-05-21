@@ -1,20 +1,22 @@
-const tests = ["IQ Tests", "Memory Training", "Logic Challenges"];
-
-{
-  /* "Math Challenges", "Critical Thinking", "Reaction Speed",  "Focus Exercises",
-  "Reaction Speed",
-
-  "Visual Memory", */
-}
-
-const descriptions: Record<string, string> = {
-  "IQ Tests": "Test your intelligence with fast and challenging IQ questions.",
-
-  "Memory Training": "Improve memory, focus, and long-term brain performance.",
-
-  "Logic Challenges":
-    "Solve logic puzzles designed to sharpen critical thinking skills.",
-};
+const tests = [
+  {
+    title: "IQ Tests",
+    href: "/tests/brain-games",
+    description:
+      "Test your intelligence with fast and challenging IQ questions.",
+  },
+  {
+    title: "Memory Training",
+    href: "/tests/memory-training",
+    description: "Improve memory, focus, and long-term brain performance.",
+  },
+  {
+    title: "Logic Challenges",
+    href: "/tests/personality-tests",
+    description:
+      "Solve logic puzzles designed to sharpen critical thinking skills.",
+  },
+];
 
 export default function TestsPage() {
   return (
@@ -31,12 +33,12 @@ export default function TestsPage() {
           {tests.map((test, index) => (
             <a
               key={index}
-              href={`/tests/${test.toLowerCase().replace(/\s+/g, "-")}`}
+              href={test.href}
               className="bg-[#161b22] border border-[#30363d] hover:border-blue-500 transition-all rounded-3xl p-6 cursor-pointer hover:-translate-y-1 block"
             >
-              <h2 className="text-2xl font-bold mb-3">{test}</h2>
+              <h2 className="text-2xl font-bold mb-3">{test.title}</h2>
 
-              <p className="text-gray-400">{descriptions[test]}</p>
+              <p className="text-gray-400">{test.description}</p>
             </a>
           ))}
         </div>
