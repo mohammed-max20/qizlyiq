@@ -1,7 +1,7 @@
 const tests = [
   {
     title: "IQ Tests",
-    href: "/tests/brain-games",
+    href: "/coming-soon",
     description:
       "Test your intelligence with fast and challenging IQ questions.",
   },
@@ -12,7 +12,7 @@ const tests = [
   },
   {
     title: "Logic Challenges",
-    href: "/tests/personality-tests",
+    href: "/coming-soon",
     description:
       "Solve logic puzzles designed to sharpen critical thinking skills.",
   },
