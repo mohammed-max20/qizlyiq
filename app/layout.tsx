@@ -46,7 +46,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NT7S5B692N"
+          src="https://www.googletagmanager.com/gtag/js?id=G-RXRELNZ45N"
           strategy="afterInteractive"
         />
 
@@ -55,7 +55,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-NT7S5B692N');
+            gtag('config', 'G-RXRELNZ45N');
           `}
         </Script>
 
