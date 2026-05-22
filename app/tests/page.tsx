@@ -1,13 +1,13 @@
 const tests = [
   {
     title: "IQ Tests",
-    href: "/coming-soon",
+    href: "/tests/iq-tests/page.tsx",
     description:
       "Test your intelligence with fast and challenging IQ questions.",
   },
   {
     title: "Memory Training",
-    href: "/tests/memory-training",
+    href: "/tests/memory-training/page.tsx",
     description: "Improve memory, focus, and long-term brain performance.",
   },
   {
