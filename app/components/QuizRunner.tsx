@@ -1,33 +1,43 @@
-import QuizRunner from "@/app/components/QuizRunner";
-import { iqTestData } from "@/app/data/iqTestData";
-
-export default function IQTestPlayPage() {
-  return <QuizRunner data={iqTestData} />;
-}
-
-/*"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import { iqTestData } from "@/app/data/iqTestData";
 
-export default function IQTestPage() {
+type Question = {
+  id: number;
+  question: string;
+  image?: string;
+  options: {
+    text: string;
+    points: number;
+  }[];
+};
+
+type QuizData = {
+  title: string;
+  description: string;
+  questions: Question[];
+};
+
+export default function QuizRunner({ data }: { data: QuizData }) {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
 
-  const question = iqTestData.questions[current];
-  const progress = ((current + 1) / iqTestData.questions.length) * 100;
+  const question = data.questions[current];
+
+  const progress = ((current + 1) / data.questions.length) * 100;
 
   const answerQuestion = (points: number, index: number) => {
     if (selected !== null) return;
 
     setSelected(index);
+
     setScore((prev) => prev + points);
 
     setTimeout(() => {
-      if (current + 1 < iqTestData.questions.length) {
+      if (current + 1 < data.questions.length) {
         setCurrent((prev) => prev + 1);
         setSelected(null);
       } else {
@@ -36,16 +46,32 @@ export default function IQTestPage() {
     }, 700);
   };
 
+  const percentage = Math.round((score / data.questions.length) * 100);
+
   const getRank = () => {
-    if (score >= 13) return "Elite Thinker";
-    if (score >= 10) return "Sharp Mind";
-    if (score >= 7) return "Average Thinker";
-    return "Beginner Thinker";
+    if (percentage >= 90) return "Elite Thinker";
+    if (percentage >= 70) return "Sharp Mind";
+    if (percentage >= 50) return "Average Thinker";
+
+    return "Brain Rot Victim";
+  };
+
+  const shareResult = async () => {
+    const text = `I scored ${percentage}% on ${data.title} at QizlyIQ`;
+
+    if (navigator.share) {
+      await navigator.share({
+        title: data.title,
+        text,
+        url: window.location.href,
+      });
+    } else {
+      await navigator.clipboard.writeText(text);
+      alert("Result copied!");
+    }
   };
 
   if (finished) {
-    const percentage = Math.round((score / iqTestData.questions.length) * 100);
-
     return (
       <main className="min-h-screen bg-[#0d1117] text-white flex items-center justify-center px-6 py-10">
         <div className="max-w-2xl w-full bg-[#161b22] border border-[#30363d] rounded-3xl p-10 text-center">
@@ -54,17 +80,20 @@ export default function IQTestPage() {
           <h1 className="text-4xl font-black mb-2">{getRank()}</h1>
 
           <p className="text-gray-400 text-lg mb-8">
-            You answered {score} out of {iqTestData.questions.length} questions correctly.
+            You answered {score} out of {data.questions.length} questions
+            correctly.
           </p>
 
           <div className="w-full bg-[#21262d] h-4 rounded-full overflow-hidden mb-10">
             <div
-              className="bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 h-4 rounded-full transition-all duration-1000"
-              style={{ width: `${percentage}%` }}
+              className="bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 h-4 rounded-full transition-all duration-1000 ease-out"
+              style={{
+                width: `${percentage}%`,
+              }}
             />
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-3">
             <button
               onClick={() => {
                 setCurrent(0);
@@ -75,6 +104,13 @@ export default function IQTestPage() {
               className="bg-blue-600 hover:bg-blue-700 transition px-6 py-4 rounded-2xl text-lg font-bold"
             >
               Try Again
+            </button>
+
+            <button
+              onClick={shareResult}
+              className="bg-[#21262d] border border-[#30363d] hover:border-cyan-400 transition px-6 py-4 rounded-2xl text-lg font-bold"
+            >
+              Share Result
             </button>
 
             <Link
@@ -90,24 +126,40 @@ export default function IQTestPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0d1117] text-white flex items-center justify-center px-6 py-10">
+    <main className="min-h-screen bg-[#0d1117] text-white flex items-center justify-center px-6 py-10 select-none">
       <div className="max-w-2xl w-full bg-[#161b22] border border-[#30363d] rounded-3xl p-8">
         <div className="mb-8">
           <div className="w-full bg-[#21262d] h-3 rounded-full overflow-hidden">
             <div
-              className="bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 h-3 rounded-full transition-all duration-700"
+              className="bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 h-3 rounded-full transition-all duration-1000 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
-        <p className="text-gray-400 mb-3">
-          Question {current + 1} of {iqTestData.questions.length}
-        </p>
+        <div className="flex justify-between items-center mb-8 text-gray-400">
+          <span>
+            Question {current + 1} / {data.questions.length}
+          </span>
+
+          <span className="px-4 py-2 rounded-full text-sm font-bold bg-[#21262d] text-blue-300">
+            IQ Test
+          </span>
+        </div>
 
         <h1 className="text-3xl font-black mb-8 leading-relaxed">
           {question.question}
         </h1>
+
+        {question.image && (
+          <div className="mb-8">
+            <img
+              src={question.image}
+              alt="Question visual"
+              className="w-full rounded-2xl border border-[#30363d]"
+            />
+          </div>
+        )}
 
         <div className="grid gap-4">
           {question.options.map((option, index) => (
@@ -121,8 +173,8 @@ export default function IQTestPage() {
                   selected === null
                     ? "bg-[#21262d] border-[#30363d] hover:border-blue-500 hover:bg-[#30363d]"
                     : selected === index
-                    ? "bg-blue-500/20 border-blue-500 text-blue-300"
-                    : "bg-[#21262d] border-[#30363d] opacity-50"
+                      ? "bg-blue-500/20 border-blue-500 text-blue-300"
+                      : "bg-[#21262d] border-[#30363d] opacity-50"
                 }
               `}
             >
@@ -134,4 +186,3 @@ export default function IQTestPage() {
     </main>
   );
 }
-  */
