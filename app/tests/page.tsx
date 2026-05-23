@@ -1,7 +1,7 @@
 const tests = [
   {
     title: "IQ Tests",
-    href: "/tests/iq-tests/play",
+    href: "/tests/iq-tests/page",
     description:
       "Test your intelligence with fast and challenging IQ questions.",
   },
