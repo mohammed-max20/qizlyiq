@@ -116,7 +116,7 @@ export default function QuizRunner({ data }: { data: QuizData }) {
               href="/"
               className="bg-[#21262d] border border-[#30363d] hover:border-blue-500 transition px-6 py-4 rounded-2xl text-lg font-bold"
             >
-              Home Page
+              Home
             </Link>
           </div>
         </div>
