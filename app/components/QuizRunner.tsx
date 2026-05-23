@@ -57,8 +57,7 @@ export default function QuizRunner({ data }: { data: QuizData }) {
   };
 
   const shareResult = async () => {
-    const text = `I scored ${percentage}% on ${data.title} at QizlyIQ`;
-
+    const text = `I scored ${percentage}% on the ${data.title} at QizlyIQ. Can you beat me?`;
     if (navigator.share) {
       await navigator.share({
         title: data.title,
