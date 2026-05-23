@@ -16,8 +16,26 @@ type Question = {
 type QuizData = {
   title: string;
   description: string;
-  questions: Question[];
+  shareText: string;
+  type: "correct" | "score";
+
+  questions: {
+    id: number;
+    question: string;
+    image?: string;
+
+    options: {
+      text: string;
+      points: number;
+    }[];
+  }[];
 };
+
+/*type QuizData = {
+  title: string;
+  description: string;
+  questions: Question[];
+};*/
 
 export default function QuizRunner({ data }: { data: QuizData }) {
   const [current, setCurrent] = useState(0);
@@ -46,7 +64,12 @@ export default function QuizRunner({ data }: { data: QuizData }) {
     }, 700);
   };
 
-  const percentage = Math.round((score / data.questions.length) * 100);
+  const percentage =
+    data.type === "score"
+      ? Math.round((score / (data.questions.length * 3)) * 100)
+      : Math.round((score / data.questions.length) * 100);
+
+  /*const percentage = Math.round((score / data.questions.length) * 100);*/
 
   const getRank = () => {
     if (percentage >= 90) return "Elite Thinker";
@@ -79,8 +102,9 @@ export default function QuizRunner({ data }: { data: QuizData }) {
           <h1 className="text-4xl font-black mb-2">{getRank()}</h1>
 
           <p className="text-gray-400 text-lg mb-8">
-            You answered {score} out of {data.questions.length} questions
-            correctly.
+            {data.type === "score"
+              ? `Your focus score is ${percentage}%.`
+              : `You answered ${score} out of ${data.questions.length} questions correctly.`}
           </p>
 
           <div className="w-full bg-[#21262d] h-4 rounded-full overflow-hidden mb-10">

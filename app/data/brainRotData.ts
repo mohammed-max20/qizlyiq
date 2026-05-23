@@ -1,5 +1,6 @@
 export const brainRotData = {
   title: "Brain Rot Recovery",
+  type: "score" as const,
   description:
     "Test your focus, dopamine balance, attention span, and scrolling habits.",
 

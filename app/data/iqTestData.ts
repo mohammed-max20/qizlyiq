@@ -10,8 +10,10 @@ export type IQQuestion = {
 export const iqTestData = {
   slug: "iq-tests",
   title: "Ultimate IQ Test",
+  type: "correct" as const,
   description:
     "Test your logical thinking, pattern recognition, memory, and problem-solving skills with carefully selected IQ questions.",
+  shareText: "I got IQ Test results on QizlyIQ. Can you beat me?",
 
   questions: [
     {
