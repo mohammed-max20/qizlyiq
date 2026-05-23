@@ -171,61 +171,55 @@ export const iqTestData = {
 
     {
       id: 16,
-      question: "Which shape is different from the others?",
-      image: "/iq/shape-1.png",
+      question: "Which number comes next? 5, 10, 20, 40, ?",
       options: [
-        { text: "Top Left", points: 0 },
-        { text: "Top Right", points: 1 },
-        { text: "Bottom Left", points: 0 },
-        { text: "Bottom Right", points: 0 },
+        { text: "45", points: 0 },
+        { text: "60", points: 0 },
+        { text: "80", points: 1 },
+        { text: "100", points: 0 },
       ],
     },
-
     {
       id: 17,
-      question: "Which pattern completes the sequence?",
-      image: "/iq/pattern-1.png",
+      question:
+        "If some painters are artists and all artists are creative, what must be true?",
       options: [
-        { text: "A", points: 0 },
-        { text: "B", points: 1 },
-        { text: "C", points: 0 },
-        { text: "D", points: 0 },
+        { text: "All painters are creative", points: 0 },
+        { text: "Some painters may be creative", points: 1 },
+        { text: "No painters are creative", points: 0 },
+        { text: "All creative people are painters", points: 0 },
       ],
     },
-
     {
       id: 18,
-      question: "Which box should come next?",
-      image: "/iq/pattern-2.png",
+      question:
+        "Which word best completes the analogy? Hand is to Glove as Foot is to:",
       options: [
-        { text: "Option 1", points: 0 },
-        { text: "Option 2", points: 0 },
-        { text: "Option 3", points: 1 },
-        { text: "Option 4", points: 0 },
+        { text: "Sock", points: 1 },
+        { text: "Shoe", points: 0 },
+        { text: "Leg", points: 0 },
+        { text: "Toe", points: 0 },
       ],
     },
-
     {
       id: 19,
-      question: "Which symbol is mirrored incorrectly?",
-      image: "/iq/symbols-1.png",
+      question: "What comes next in the pattern? A, C, F, J, O, ?",
       options: [
-        { text: "A", points: 0 },
-        { text: "B", points: 0 },
-        { text: "C", points: 1 },
-        { text: "D", points: 0 },
+        { text: "S", points: 0 },
+        { text: "T", points: 0 },
+        { text: "U", points: 1 },
+        { text: "V", points: 0 },
       ],
     },
-
     {
       id: 20,
-      question: "Which image contains the hidden pattern?",
-      image: "/iq/final-pattern.png",
+      question:
+        "A book and a pen cost $11 together. The book costs $10 more than the pen. How much does the pen cost?",
       options: [
-        { text: "Image 1", points: 1 },
-        { text: "Image 2", points: 0 },
-        { text: "Image 3", points: 0 },
-        { text: "Image 4", points: 0 },
+        { text: "$0.50", points: 1 },
+        { text: "$1", points: 0 },
+        { text: "$1.50", points: 0 },
+        { text: "$2", points: 0 },
       ],
     },
   ],
