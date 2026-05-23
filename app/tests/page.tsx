@@ -7,7 +7,7 @@ const tests = [
   },
   {
     title: "Memory Training",
-    href: "/tests/memory-training/page.tsx",
+    href: "/tests/memory-training",
     description: "Improve memory, focus, and long-term brain performance.",
   },
   {
