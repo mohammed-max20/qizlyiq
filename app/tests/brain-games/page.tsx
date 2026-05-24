@@ -19,6 +19,23 @@ export default function BrainGamesPage() {
           10 fast brain challenges.
         </p>
 
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+          <div className="bg-[#21262d] rounded-2xl p-5 border border-[#30363d]">
+            <h2 className="text-3xl font-black text-cyan-400 mb-2">10</h2>
+            <p className="text-gray-400 text-sm">Challenges</p>
+          </div>
+
+          <div className="bg-[#21262d] rounded-2xl p-5 border border-[#30363d]">
+            <h2 className="text-3xl font-black text-pink-400 mb-2">Speed</h2>
+            <p className="text-gray-400 text-sm">Brain Training</p>
+          </div>
+
+          <div className="bg-[#21262d] rounded-2xl p-5 border border-[#30363d]">
+            <h2 className="text-3xl font-black text-blue-400 mb-2">Free</h2>
+            <p className="text-gray-400 text-sm">Instant Results</p>
+          </div>
+        </div>
+
         <Link
           href="/tests/brain-games/play"
           className="inline-block w-full sm:w-auto bg-gradient-to-r from-purple-500 via-cyan-400 to-blue-500 hover:opacity-90 transition-all text-white font-black text-lg px-10 py-5 rounded-2xl"
