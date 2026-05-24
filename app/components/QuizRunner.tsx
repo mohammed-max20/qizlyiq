@@ -72,11 +72,39 @@ export default function QuizRunner({ data }: { data: QuizData }) {
   /*const percentage = Math.round((score / data.questions.length) * 100);*/
 
   const getRank = () => {
-    if (percentage >= 90) return "Elite Thinker";
-    if (percentage >= 70) return "Sharp Mind";
-    if (percentage >= 50) return "Average Thinker";
+    if (data.title === "Ultimate IQ Test") {
+      if (percentage >= 90) return "Elite Thinker";
+      if (percentage >= 70) return "Sharp Mind";
+      if (percentage >= 50) return "Average Thinker";
 
-    return "Brain Rot Victim";
+      return "Beginner Thinker";
+    }
+
+    if (data.title === "Brain Rot Recovery") {
+      if (percentage >= 90) return "Elite Focus";
+      if (percentage >= 70) return "Healthy Brain";
+      if (percentage >= 50) return "Distracted Mind";
+
+      return "Brain Rot Victim";
+    }
+
+    if (data.title === "Brain Games") {
+      if (percentage >= 90) return "Brain Master";
+      if (percentage >= 70) return "Fast Thinker";
+      if (percentage >= 50) return "Quick Learner";
+
+      return "Slow Processor";
+    }
+
+    if (data.title === "Personality Test") {
+      if (percentage >= 90) return "Strategic Leader";
+      if (percentage >= 70) return "Creative Thinker";
+      if (percentage >= 50) return "Balanced Mind";
+
+      return "Free Spirit";
+    }
+
+    return "Unknown";
   };
 
   const shareResult = async () => {
