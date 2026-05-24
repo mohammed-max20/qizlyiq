@@ -58,7 +58,7 @@ export default function Home() {
           </a>
 
           <a
-            href="/tests/personality-tests"
+            href="/tests/personality-test"
             className="
       bg-[#161b22]
       border
