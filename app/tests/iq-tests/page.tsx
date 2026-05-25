@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ultimate IQ Test | QizlyIQ",
+  description:
+    "Take a free IQ test with logic, pattern recognition, memory, and reasoning questions. Get instant results on QizlyIQ.",
+};
 
 import Link from "next/link";
 

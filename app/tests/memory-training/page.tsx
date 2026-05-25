@@ -1,6 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Memory Training | QizlyIQ",
+  description:
+    "Improve your memory, recall ability, and focus with this free memory training test.",
+};
 
 export default function MemoryTrainingPage() {
   return (

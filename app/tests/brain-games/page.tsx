@@ -1,6 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Brain Games | QizlyIQ",
+  description:
+    "Train your brain with logic games, speed challenges, and quick-thinking puzzles.",
+};
 
 export default function BrainGamesPage() {
   return (

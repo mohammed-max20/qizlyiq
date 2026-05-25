@@ -1,6 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Personality Test | QizlyIQ",
+  description:
+    "Discover your personality type, mindset, and decision-making style with this free personality test.",
+};
 
 export default function PersonalityTestPage() {
   return (

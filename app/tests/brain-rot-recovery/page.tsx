@@ -1,6 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Brain Rot Recovery Test | QizlyIQ",
+  description:
+    "Test your focus, dopamine balance, scrolling habits, and attention span with the Brain Rot Recovery Test.",
+};
 
 export default function BrainRotRecoveryPage() {
   return (
