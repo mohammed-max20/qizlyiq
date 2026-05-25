@@ -3,8 +3,22 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Memory Training | QizlyIQ",
+
   description:
     "Improve your memory, recall ability, and focus with this free memory training test.",
+
+  openGraph: {
+    title: "Memory Training | QizlyIQ",
+
+    description:
+      "Improve your memory, recall ability, and focus with this free memory training test.",
+
+    url: "https://qizlyiq.com/tests/memory-training",
+
+    siteName: "QizlyIQ",
+
+    type: "website",
+  },
 };
 
 export default function MemoryTrainingPage() {

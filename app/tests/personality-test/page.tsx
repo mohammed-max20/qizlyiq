@@ -3,8 +3,22 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Personality Test | QizlyIQ",
+
   description:
     "Discover your personality type, mindset, and decision-making style with this free personality test.",
+
+  openGraph: {
+    title: "Personality Test | QizlyIQ",
+
+    description:
+      "Discover your personality type, mindset, and decision-making style.",
+
+    url: "https://qizlyiq.com/tests/personality-test",
+
+    siteName: "QizlyIQ",
+
+    type: "website",
+  },
 };
 
 export default function PersonalityTestPage() {

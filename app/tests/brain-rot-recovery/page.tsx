@@ -3,8 +3,22 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Brain Rot Recovery Test | QizlyIQ",
+
   description:
     "Test your focus, dopamine balance, scrolling habits, and attention span with the Brain Rot Recovery Test.",
+
+  openGraph: {
+    title: "Brain Rot Recovery Test | QizlyIQ",
+
+    description:
+      "Test your focus, dopamine balance, scrolling habits, and attention span.",
+
+    url: "https://qizlyiq.com/tests/brain-rot-recovery",
+
+    siteName: "QizlyIQ",
+
+    type: "website",
+  },
 };
 
 export default function BrainRotRecoveryPage() {

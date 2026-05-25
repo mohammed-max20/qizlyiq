@@ -3,8 +3,22 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Brain Games | QizlyIQ",
+
   description:
     "Train your brain with logic games, speed challenges, and quick-thinking puzzles.",
+
+  openGraph: {
+    title: "Brain Games | QizlyIQ",
+
+    description:
+      "Train your brain with logic games, speed challenges, and quick-thinking puzzles.",
+
+    url: "https://qizlyiq.com/tests/brain-games",
+
+    siteName: "QizlyIQ",
+
+    type: "website",
+  },
 };
 
 export default function BrainGamesPage() {
