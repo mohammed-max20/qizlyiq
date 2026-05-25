@@ -104,6 +104,14 @@ export default function QuizRunner({ data }: { data: QuizData }) {
       return "Free Spirit";
     }
 
+    if (data.title === "Memory Training") {
+      if (percentage >= 90) return "Memory Master";
+      if (percentage >= 70) return "Strong Recall";
+      if (percentage >= 50) return "Average Memory";
+
+      return "Forgetful Mind";
+    }
+
     return "Unknown";
   };
 
