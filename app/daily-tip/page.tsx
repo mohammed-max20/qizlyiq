@@ -31,7 +31,7 @@ export default function DailyTipPage() {
   const tip = tips[dayIndex];
 
   const shareTip = async () => {
-    const message = `Today's Brain Tip on QizlyIQ: ${tip.title} — ${tip.text}`;
+    const message = `Today's Brain Tip on QizlyIQ: ${tip.title} — ${tip.text} https://qizlyiq.com/daily-tip`;
 
     if (navigator.share) {
       await navigator.share({
